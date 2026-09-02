@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThlongPremium — Cày Thuê Blox Fruits #1 Việt Nam</title>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0A0E1A;
+  --bg-card:#0D1E3D;
+  --bg-section:#0F1829;
+  --blue:#00D4FF;
+  --gold:#FFB800;
+  --purple:#7B2FFF;
+  --text:#EEF2FF;
+  --muted:#6A7B99;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 5rem;background:rgba(10,14,26,0.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,212,255,0.12)}
+.logo{font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.3rem;color:var(--blue);letter-spacing:-0.5px;text-shadow:0 0 24px rgba(0,212,255,0.5);text-decoration:none}
+.logo b{color:var(--gold)}
+nav ul{list-style:none;display:flex;gap:2rem}
+nav a{color:var(--muted);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color .2s}
+nav a:hover{color:var(--blue)}
+.nav-btn{background:var(--gold);color:#0A0E1A!important;padding:.45rem 1.2rem;border-radius:8px;font-weight:700!important;transition:box-shadow .2s!important}
+.nav-btn:hover{box-shadow:0 0 20px rgba(255,184,0,.45)!important}
+.nav-mobile{display:none;cursor:pointer;flex-direction:column;gap:5px}
+.nav-mobile span{width:22px;height:2px;background:var(--text);border-radius:2px;display:block}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:9rem 5rem 5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 70% at 70% 50%,rgba(0,212,255,.07) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.15),transparent)}
+.hero-content{z-index:1}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.25);border-radius:100px;padding:.3rem 1rem;font-size:.75rem;font-weight:700;color:var(--blue);letter-spacing:.5px;margin-bottom:1.5rem}
+.badge-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:blink 1.5s ease infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+h1{font-family:'Exo 2',sans-serif;font-size:3.6rem;font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:1.2rem}
+h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 40px rgba(255,184,0,.25)}
+.hero-sub{color:var(--muted);font-size:1.05rem;line-height:1.75;margin-bottom:2.5rem;max-width:460px}
+.actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{font-family:'Exo 2',sans-serif;font-weight:700;font-size:.95rem;padding:.8rem 1.8rem;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-gold{background:var(--gold);color:#0A0E1A}
+.btn-gold:hover{box-shadow:0 0 30px rgba(255,184,0,.5);transform:translateY(-1px)}
+.btn-outline{border:1px solid rgba(0,212,255,.3);color:var(--blue);background:transparent}
+.btn-outline:hover{background:rgba(0,212,255,.08);border-color:var(--blue)}
+
+/* ── DEVIL FRUIT ── */
+.hero-visual{display:flex;justify-content:center;align-items:center;position:relative}
+.fruit-wrap{position:relative;width:340px;height:340px;display:flex;align-items:center;justify-content:center;animation:levitate 6s ease-in-out infinite}
+@keyframes levitate{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+.fruit-orb{width:220px;height:230px;border-radius:50% 42% 58% 48%/58% 52% 48% 42%;background:radial-gradient(ellipse at 32% 28%,#FF7A45 0%,#C0391B 45%,#7A0000 100%);position:relative;overflow:hidden;animation:glow-pulse 3s ease-in-out infinite}
+@keyframes glow-pulse{0%,100%{box-shadow:0 0 40px rgba(255,107,53,.6),0 0 90px rgba(255,107,53,.3),0 0 160px rgba(255,107,53,.12)}50%{box-shadow:0 0 60px rgba(255,107,53,.85),0 0 130px rgba(255,107,53,.5),0 0 220px rgba(255,107,53,.2)}}
+.fruit-orb::before{content:'';position:absolute;width:58%;height:50%;background:radial-gradient(ellipse at 38% 28%,rgba(255,255,255,.38) 0%,transparent 65%);top:10%;left:8%;border-radius:50%;transform:rotate(-20deg)}
+.fruit-orb::after{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-50deg,transparent 0,transparent 16px,rgba(0,0,0,.12) 16px,rgba(0,0,0,.12) 20px);border-radius:inherit}
+.fruit-stem{position:absolute;width:10px;height:24px;background:linear-gradient(to bottom,#3A8C2A,#1E5218);border-radius:5px 5px 3px 3px;top:-22px;left:50%;transform:translateX(-50%)}
+.fruit-leaf{position:absolute;width:20px;height:12px;background:#2D7A1F;border-radius:60% 40% 40% 20%;top:-30px;left:calc(50% + 4px);transform:rotate(-30deg)}
+.orbit{position:absolute;border-radius:50%;border:1px solid rgba(255,107,53,.18)}
+.orbit-1{width:290px;height:290px;animation:spin 18s linear infinite}
+.orbit-2{width:336px;height:336px;border-color:rgba(0,212,255,.1);animation:spin 32s linear infinite reverse}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.orbit-dot{position:absolute;border-radius:50%;top:-4px;left:50%;transform:translateX(-50%)}
+.dot-gold{width:9px;height:9px;background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.dot-blue{width:7px;height:7px;background:var(--blue);box-shadow:0 0 10px var(--blue);bottom:-3px;top:auto}
+.particles{position:absolute;inset:0;pointer-events:none}
+.p{position:absolute;border-radius:50%;animation:float-p linear infinite;opacity:0}
+@keyframes float-p{0%{transform:translateY(0) scale(1);opacity:.8}100%{transform:translateY(-80px) scale(.2);opacity:0}}
+
+/* ── STATS ── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(0,212,255,.1);border-bottom:1px solid rgba(0,212,255,.1);background:rgba(13,30,61,.6)}
+.stat{padding:2rem;text-align:center;border-right:1px solid rgba(0,212,255,.08)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Exo 2',sans-serif;font-size:2.2rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:.35rem}
+.stat-l{font-size:.8rem;color:var(--muted);letter-spacing:.5px}
+
+/* ── SECTION BASE ── */
+.section{padding:5rem}
+.sh{text-align:center;margin-bottom:3.5rem}
+.eyebrow{font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:.7rem}
+h2{font-family:'Exo 2',sans-serif;font-size:2.3rem;font-weight:900;letter-spacing:-1px;margin-bottom:.7rem}
+.sub{color:var(--muted);font-size:.95rem;line-height:1.7;max-width:500px;margin:0 auto}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.sc{background:var(--bg-card);border:1px solid rgba(0,212,255,.1);border-radius:16px;padding:2rem;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .25s}
+.sc:hover{border-color:rgba(0,212,255,.4);box-shadow:0 0 30px rgba(0,212,255,.07);transform:translateY(-4px)}
+.sc-icon{font-size:2rem;margin-bottom:1.2rem;display:block}
+.sc-title{font-family:'Exo 2',sans-serif;font-weight:700;font-size:1.1rem;margin-bottom:.55rem}
+.sc-desc{color:var(--muted);font-size:.875rem;line-height:1.6;margin-bottom:1.2rem}
+.sc-price{font-family:'Exo 2',sans-serif;font-weight:700;color:var(--gold);font-size:.95rem}
+.sc-tag{display:inline-block;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:100px;font-size:.7rem;font-weight:700;color:var(--blue);padding:.2rem .7rem;margin-bottom:.8rem;letter-spacing:.5px}
+
+/* ── HOW IT WORKS ── */
+.how{background:var(--bg-section);padding:5rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;position:relative}
+.steps::before{content:'';position:absolute;top:31px;left:calc(16.7% + 1rem);right:calc(16.7% + 1rem);height:1px;background:linear-gradient(90deg,rgba(0,212,255,.3),rgba(0,212,255,.3))}
+.step{text-align:center;position:relative;z-index:1}
+.step-n{width:62px;height:62px;border-radius:50%;background:var(--bg-card);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.3rem;color:var(--blue);margin:0 auto 1.5rem;box-shadow:0 0 20px rgba(0,212,255,.2)}
+.step-t{font-family:'Exo 2',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.55rem}
+.step-d{color:var(--muted);font-size:.875rem;line-height:1.6}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
+.pc{background:var(--bg-card);border:1px solid rgba(0,212,255,.1);border-radius:20px;padding:2.5rem 2rem;text-align:center;position:relative;transition:transform .2s,border-color .2s}
+.pc:hover{transform:translateY(-4px)}
+.pc.hot{border-color:var(--gold);box-shadow:0 0 60px rgba(255,184,0,.1);transform:scale(1.04)}
+.pc.hot:hover{transform:scale(1.06) translateY(-4px)}
+.hot-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:#0A0E1A;font-size:.68rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:.28rem 1.1rem;border-radius:100px;white-space:nowrap}
+.pc-tier{font-family:'Exo 2',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+.pc-price{font-family:'Exo 2',sans-serif;font-size:2.6rem;font-weight:900;line-height:1;margin-bottom:.25rem}
+.pc-price.gold{color:var(--gold)}
+.pc-unit{font-size:.75rem;color:var(--muted);margin-bottom:2rem}
+.pc-list{list-style:none;text-align:left;margin-bottom:2rem}
+.pc-list li{font-size:.875rem;color:var(--muted);padding:.45rem 0;display:flex;align-items:flex-start;gap:.6rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.pc-list li:last-child{border-bottom:none}
+.ck{color:var(--blue);font-size:.8rem;flex-shrink:0;margin-top:.15rem}
+.ck.gold{color:var(--gold)}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--bg-section);padding:5rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.tc{background:var(--bg-card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:2rem}
+.stars{color:var(--gold);font-size:.85rem;letter-spacing:3px;margin-bottom:1rem}
+.tc-text{color:var(--muted);font-size:.875rem;line-height:1.75;margin-bottom:1.5rem;font-style:italic}
+.tc-author{display:flex;align-items:center;gap:.75rem}
+.avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;font-family:'Exo 2',sans-serif;flex-shrink:0}
+.author-name{font-weight:600;font-size:.875rem;font-family:'Exo 2',sans-serif}
+.author-detail{font-size:.72rem;color:var(--muted)}
+
+/* ── CTA ── */
+.cta-section{padding:6rem 5rem;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(123,47,255,.12) 0%,transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cta-title{font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:1rem}
+.cta-sub{color:var(--muted);font-size:.95rem;max-width:400px;margin:0 auto 2.5rem;line-height:1.7}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.contact-row{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap}
+.contact-item{display:flex;align-items:center;gap:.5rem;color:var(--muted);font-size:.875rem}
+.contact-icon{font-size:1.1rem}
+
+/* ── FOOTER ── */
+footer{background:rgba(13,30,61,.4);border-top:1px solid rgba(0,212,255,.07);padding:1.8rem 5rem;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:.78rem;color:var(--muted)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--blue)}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.12),transparent);margin:0}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  nav ul{display:none}
+  .nav-mobile{display:flex}
+  .hero{grid-template-columns:1fr;padding:8rem 1.8rem 4rem;text-align:center}
+  .hero-visual{display:none}
+  h1{font-size:2.2rem;letter-spacing:-1px}
+  .hero-sub{margin:0 auto 2rem}
+  .actions{justify-content:center}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .section,.how,.testi-section,.cta-section{padding:4rem 1.8rem}
+  .services-grid,.steps,.pricing-grid,.testi-grid{grid-template-columns:1fr}
+  .steps::before{display:none}
+  .pc.hot{transform:none}
+  .pc.hot:hover{transform:translateY(-4px)}
+  footer{flex-direction:column;gap:1rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Thlong<b>Premium</b></a>
+  <ul>
+    <li><a href="#dich-vu">Dịch vụ</a></li>
+    <li><a href="#bang-gia">Bảng giá</a></li>
+    <li><a href="#danh-gia">Đánh giá</a></li>
+    <li><a href="#lien-he" class="nav-btn">Đặt ngay</a></li>
+  </ul>
+  <div class="nav-mobile" onclick="this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">
+      <span class="badge-dot"></span>
+      ĐÃ PHỤC VỤ 2.500+ KHÁCH HÀNG
+    </div>
+    <h1>Cày Thuê<br>Blox Fruits<br><em>Chuyên Nghiệp</em></h1>
+    <p class="hero-sub">Level max, boss hunt, full build — đội ngũ chuyên nghiệp lo hết. Nhanh, an toàn, không cần tốn thời gian ngồi farm.</p>
+    <div class="actions">
+      <a href="#lien-he" class="btn btn-gold">⚡ Đặt Cày Ngay</a>
+      <a href="#dich-vu" class="btn btn-outline">Xem Dịch Vụ</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="fruit-wrap">
+      <!-- Orbit rings -->
+      <div class="orbit orbit-1">
+        <div class="orbit-dot dot-gold" style="top:-4px;left:50%"></div>
+        <div class="orbit-dot dot-blue" style="bottom:-3px;top:auto;left:50%"></div>
+      </div>
+      <div class="orbit orbit-2">
+        <div class="orbit-dot dot-blue" style="top:-3px;left:25%"></div>
+      </div>
+      <!-- Devil fruit -->
+      <div class="fruit-orb">
+        <div class="fruit-stem"></div>
+        <div class="fruit-leaf"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-n">2.5K+</div>
+    <div class="stat-l">Khách hàng</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">8K+</div>
+    <div class="stat-l">Đơn hoàn thành</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">4.97</div>
+    <div class="stat-l">Điểm đánh giá</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">24/7</div>
+    <div class="stat-l">Hỗ trợ online</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- SERVICES -->
+<section class="section" id="dich-vu">
+  <div class="sh">
+    <div class="eyebrow">Dịch Vụ</div>
+    <h2>Chúng Tôi Làm Gì Cho Bạn</h2>
+    <p class="sub">Từ cày level cơ bản đến full build VIP — mọi yêu cầu đều được xử lý nhanh gọn.</p>
+  </div>
+  <div class="services-grid">
+    <div class="sc">
+      <span class="sc-tag">PHỔ BIẾN NHẤT</span>
+      <span class="sc-icon">⚔️</span>
+      <div class="sc-title">Cày Level</div>
+      <p class="sc-desc">Farm exp cực nhanh từ level 1 đến max. Đội cày kinh nghiệm, không delay, không bot lởm.</p>
+      <div class="sc-price">Từ 50.000đ</div>
+    </div>
+    <div class="sc">
+      <span class="sc-icon">👑</span>
+      <div class="sc-title">Boss Hunt</div>
+      <p class="sc-desc">Đánh tất cả boss trong game — Sea 1, 2, 3. Lấy item hiếm theo yêu cầu.</p>
+      <div class="sc-price">Từ 30.000đ</div>
+    </div>
+    <div class="sc">
+      <span class="sc-icon">🍈</span>
+      <div class="sc-title">Tìm Trái Ác Quỷ</div>
+      <p class="sc-desc">Hunt trái hiếm theo đơn: Leopard, Dragon, Dough, Kitsune... Nhanh và chuẩn.</p>
+      <div class="sc-price">Từ 40.000đ</div>
+    </div>
+    <div class="sc">
+      <span class="sc-icon">🌀</span>
+      <div class="sc-title">Reset Stat</div>
+      <p class="sc-desc">Reset và phân bổ stat tối ưu theo playstyle: Fruit, Sword, Gun, hay Hybrid build.</p>
+      <div class="sc-price">Từ 20.000đ</div>
+    </div>
+    <div class="sc">
+      <span class="sc-icon">🔥</span>
+      <div class="sc-title">Max Skill</div>
+      <p class="sc-desc">Max toàn bộ kỹ năng chiến đấu, haki, sword/gun mastery theo yêu cầu của bạn.</p>
+      <div class="sc-price">Từ 35.000đ</div>
+    </div>
+    <div class="sc">
+      <span class="sc-tag">TIẾT KIỆM NHẤT</span>
+      <span class="sc-icon">🏆</span>
+      <div class="sc-title">Full Build Combo</div>
+      <p class="sc-desc">Trọn gói: Level max + Boss + Reset Stat + Max Skill. Tài khoản hoàn chỉnh 100%.</p>
+      <div class="sc-price">Từ 220.000đ</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="quy-trinh">
+  <div class="sh">
+    <div class="eyebrow">Quy Trình</div>
+    <h2>Chỉ 3 Bước Đơn Giản</h2>
+    <p class="sub">Không phức tạp, không đợi lâu — đặt hàng xong là chúng tôi lo.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-n">1</div>
+      <div class="step-t">Liên Hệ Đặt Cày</div>
+      <p class="step-d">Nhắn Zalo hoặc Discord, báo dịch vụ cần, cung cấp tên nhân vật. Tư vấn miễn phí 24/7.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">2</div>
+      <div class="step-t">Thanh Toán An Toàn</div>
+      <p class="step-d">Chuyển khoản ngân hàng, Momo, hoặc ZaloPay. Thanh toán trước 50% — còn lại khi xong việc.</p>
+    </div>
+    <div class="step">
+      <div class="step-n">3</div>
+      <div class="step-t">Nhận Kết Quả</div>
+      <p class="step-d">Nhận lại tài khoản đã hoàn thiện. Báo cáo ảnh/video đầy đủ. Bảo hành nếu có sự cố.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRICING -->
+<section class="section" id="bang-gia">
+  <div class="sh">
+    <div class="eyebrow">Bảng Giá</div>
+    <h2>Chọn Gói Phù Hợp</h2>
+    <p class="sub">Giá cả minh bạch, không phí ẩn. Liên hệ để được báo giá chính xác theo yêu cầu.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pc">
+      <div class="pc-tier">Basic</div>
+      <div class="pc-price">50K</div>
+      <div class="pc-unit">bắt đầu từ / đơn</div>
+      <ul class="pc-list">
+        <li><span class="ck">✓</span>Cày level 1 → 1000</li>
+        <li><span class="ck">✓</span>Thời gian 2–4 giờ</li>
+        <li><span class="ck">✓</span>Báo cáo ảnh khi xong</li>
+        <li><span class="ck">✓</span>Hỗ trợ qua Zalo</li>
+      </ul>
+      <a href="#lien-he" class="btn btn-outline" style="width:100%;justify-content:center">Đặt Basic</a>
+    </div>
+    <div class="pc hot">
+      <div class="hot-badge">⭐ ĐƯỢC CHỌN NHIỀU NHẤT</div>
+      <div class="pc-tier">Standard</div>
+      <div class="pc-price gold">120K</div>
+      <div class="pc-unit">bắt đầu từ / đơn</div>
+      <ul class="pc-list">
+        <li><span class="ck gold">✓</span>Cày level 1 → 2000</li>
+        <li><span class="ck gold">✓</span>Boss hunt 1 lần</li>
+        <li><span class="ck gold">✓</span>Thời gian 4–8 giờ</li>
+        <li><span class="ck gold">✓</span>Báo cáo video đầy đủ</li>
+        <li><span class="ck gold">✓</span>Ưu tiên xử lý</li>
+      </ul>
+      <a href="#lien-he" class="btn btn-gold" style="width:100%;justify-content:center">Đặt Standard</a>
+    </div>
+    <div class="pc">
+      <div class="pc-tier">VIP Full Build</div>
+      <div class="pc-price">250K</div>
+      <div class="pc-unit">bắt đầu từ / đơn</div>
+      <ul class="pc-list">
+        <li><span class="ck">✓</span>Level max + Reset Stat</li>
+        <li><span class="ck">✓</span>Max Skill + Boss Hunt</li>
+        <li><span class="ck">✓</span>Hunt trái theo yêu cầu</li>
+        <li><span class="ck">✓</span>Hỗ trợ ưu tiên 24/7</li>
+        <li><span class="ck">✓</span>Bảo hành 48 giờ</li>
+      </ul>
+      <a href="#lien-he" class="btn btn-outline" style="width:100%;justify-content:center">Đặt VIP</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section" id="danh-gia">
+  <div class="sh">
+    <div class="eyebrow">Khách Hàng Nói Gì</div>
+    <h2>Đánh Giá Thực Tế</h2>
+    <p class="sub">Hơn 2.500 khách đã tin tưởng — đây là những gì họ nói.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="tc">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Cày từ level 1 lên 2450 trong vòng chưa đầy 6 tiếng. Chủ shop báo cáo ảnh liên tục, rất yên tâm. Sẽ quay lại đặt VIP build tuần sau."</p>
+      <div class="tc-author">
+        <div class="avatar" style="background:rgba(0,212,255,.15);color:var(--blue)">TN</div>
+        <div>
+          <div class="author-name">Trung Nguyễn</div>
+          <div class="author-detail">Khách hàng tháng 7/2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Tìm Leopard fruit mà hunt mãi không ra, nhờ shop 2 tiếng là có ngay. Giá cả hợp lý, không bị chặt chém như mấy chỗ khác. 10/10."</p>
+      <div class="tc-author">
+        <div class="avatar" style="background:rgba(255,184,0,.15);color:var(--gold)">MH</div>
+        <div>
+          <div class="author-name">Minh Hoàng</div>
+          <div class="author-detail">Khách hàng tháng 6/2025</div>
+        </div>
+      </div>
+    </div>
+    <div class="tc">
+      <div class="stars">★★★★★</div>
+      <p class="tc-text">"Đặt gói Standard, shop xong sớm hơn dự kiến. Tài khoản trả lại đúng theo yêu cầu, stat được phân bổ chuẩn theo hướng dẫn mình gửi. Uy tín thật sự."</p>
+      <div class="tc-author">
+        <div class="avatar" style="background:rgba(123,47,255,.15);color:var(--purple)">PL</div>
+        <div>
+          <div class="author-name">Phương Linh</div>
+          <div class="author-detail">Khách hàng tháng 8/2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-section" id="lien-he">
+  <div class="sh" style="margin-bottom:2rem">
+    <div class="eyebrow">Bắt Đầu Ngay</div>
+    <h2 class="cta-title">Sẵn Sàng Lên<br><em style="color:var(--gold)">Max Level?</em></h2>
+    <p class="cta-sub">Liên hệ ngay để được tư vấn miễn phí và báo giá chính xác theo yêu cầu của bạn.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="https://zalo.me" class="btn btn-gold">💬 Nhắn Zalo</a>
+    <a href="https://discord.gg" class="btn btn-outline">🎮 Discord Server</a>
+  </div>
+  <div class="contact-row" style="margin-top:2rem">
+    <div class="contact-item">
+      <span class="contact-icon">📱</span>
+      <span>Zalo: <strong style="color:var(--text)">0909 123 456</strong></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">🕐</span>
+      <span>Phản hồi trong <strong style="color:var(--text)">5 phút</strong></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">🔒</span>
+      <span>Bảo mật tài khoản <strong style="color:var(--text)">100%</strong></span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2025 ThlongPremium. Không liên kết với Roblox Corporation.</div>
+  <div class="footer-links">
+    <a href="#">Điều khoản</a>
+    <a href="#">Bảo mật</a>
+    <a href="#lien-he">Liên hệ</a>
+  </div>
+</footer>
+
+<script>
+// Smooth nav highlighting
+const sections = document.querySelectorAll('section[id], div.stats');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--blue)' : '';
+  });
+});
+
+// Floating particles on fruit
+const pw = document.querySelector('.fruit-wrap');
+if (pw) {
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    p.className = 'p';
+    const size = 3 + Math.random() * 5;
+    p.style.cssText = `
+      width:${size}px;height:${size}px;
+      background:${Math.random() > .5 ? 'rgba(255,107,53,' : 'rgba(255,184,0,'}${.4 + Math.random() * .4});
+      left:${20 + Math.random() * 60}%;
+      bottom:${10 + Math.random() * 30}%;
+      animation-duration:${2 + Math.random() * 3}s;
+      animation-delay:${Math.random() * 2}s;
+    `;
+    pw.querySelector('.particles')?.appendChild(p);
+  }
+}
+</script>
+<div class="particles" style="display:none"></div>
+
+</body>
+</html>
