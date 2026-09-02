@@ -1,0 +1,21 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env (nếu sau này thêm backend)
+.env
+.env.local
+.env.production
